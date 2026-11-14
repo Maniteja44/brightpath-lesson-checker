@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- LessonIQ workflow state changes only in `src/lib/lessoniq/engine.server.ts` via server functions using the admin client after ownership checks; workflow tables are SELECT-only for browsers so the retry limit can't be bypassed.
+- Mandatory rubric checkpoints and pass bars live in code (`constants.ts`); stored rubric versions may only append clarifications.
